@@ -16,6 +16,10 @@ ll.insertFirst(5);
 // ll.removeLast()
 ll.printList();
 
-ll.removeAtIndex(3)
+// ll.removeAtIndex(3)
+ll.clearList()
 
+ll.printList();
+ll.insertFirst(1);
+ll.insertFirst(2);
 ll.printList();

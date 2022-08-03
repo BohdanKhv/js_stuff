@@ -167,6 +167,10 @@ class LinkedList {
     }
 
     // Clears the list
+    clearList() {
+        this.head = null;
+        return
+    }
 
     // Prints the list
     printList() {
