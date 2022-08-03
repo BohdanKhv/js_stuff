@@ -65,14 +65,82 @@ class LinkedList {
     }
 
     // Removes the node at the front of the list
+    removeFirst() {
+        this.head = this.head.next;
+        this.size--;
+
+        return
+    }
 
     // Removes the node at the end of the list
+    removeLast() {
+        if(this.size === 0) return
+
+        let current = this.head;
+        let prev;
+
+        while(current) {
+            if(!current.next) {
+                prev.next = null;
+                this.size--;
+
+                return
+            } else {
+                prev = current;
+                current = current.next;
+            }
+        }
+
+        return
+    }
 
     // Removes the node at the given index
+    removeAtIndex(index) {
+        if(index > 0 && index > this.size) return
+        if(index === 0) {
+            this.head = this.head.next;
+            this.size--;
+
+            return
+        }
+
+        let current = this.head;
+        let count = 0;
+        let prev;
+
+        while(count < index) {
+            prev = current;
+            current = current.next;
+            count++;
+        }
+
+        prev.next = current.next;
+        this.size--;
+
+        return
+    }
 
     // Returns the node at the front of the list
+    getFirst() {
+        let head = this.head;
+        console.log(head.val);
+
+        return head;
+    }
 
     // Returns the node at the end of the list
+    getLast() {
+        let prev;
+        let tail = this.head;
+
+        while(tail) {
+            prev = tail;
+            tail = tail.next;
+        }
+        console.log(prev.val);
+
+        return prev;
+    }
 
     // Returns the node at the given index
     getAtIndex(index) {
@@ -92,6 +160,11 @@ class LinkedList {
     }
 
     // Returns the length of the list
+    getLength() {
+        console.log(this.size);
+
+        return this.size;
+    }
 
     // Clears the list
 
