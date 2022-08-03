@@ -169,6 +169,7 @@ class LinkedList {
     // Clears the list
     clearList() {
         this.head = null;
+        this.size = 0;
         return
     }
 
@@ -183,6 +184,29 @@ class LinkedList {
         console.log(print);
 
         return print;
+    }
+
+    // Reverse the list
+    reverse() {
+        let head = this.head;
+        let prev;
+        let next;
+
+        while(head) {
+            // save next before we overwrite node.next!
+            next = head.next;
+
+            // reverse pointer
+            head.next = prev;
+
+            // step forward in the list
+            prev = head;
+            head = next;
+        }
+
+        this.head = prev;
+
+        return
     }
 }
 
