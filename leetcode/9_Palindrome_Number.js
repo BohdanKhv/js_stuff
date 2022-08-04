@@ -1,3 +1,6 @@
+// Problem #: 14
+// Title: Longest Common Prefix
+// Difficulty: Easy
 const isPalindrome = function(x) {
     let counter = 0;
     const str = x.toString();

@@ -1,5 +1,6 @@
-// Problem #13
-// Roman to Integer
+// Problem #: 14
+// Title: Longest Common Prefix
+// Difficulty: Easy
 const romanToInt = (roman) => {
     const romanMap = {
         I: 1,
