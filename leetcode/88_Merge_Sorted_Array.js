@@ -12,17 +12,29 @@ const merge2 = function(nums1, m, nums2, n) {
 
 // Faster Solution
 const merge = (nums1, m, nums2, n) => {
+    // Length of nums1
     let i = m - 1;
+    // Length of nums2
     let j = n - 1;
+    // Length of nums1 + nums2
     let k = m + n - 1;
+
+    // While there are still elements in nums1 and nums2
     while (i >= 0 && j >= 0) {
         if (nums1[i] > nums2[j]) {
-        nums1[k--] = nums1[i--];
+            // If the last element of nums1 is greater than the last element of nums2,
+            // then we add the last element of nums1 to the end of nums1
+            nums1[k--] = nums1[i--];
         } else {
-        nums1[k--] = nums2[j--];
+            // If the last element of nums2 is greater than the last element of nums1,
+            // then we add the last element of nums2 to the end of nums1
+            nums1[k--] = nums2[j--];
         }
     }
+
+    // If there are still elements in nums2, then we add them to the end of nums1
     while (j >= 0) {
+        // Add the last element of nums2 to the end of nums1
         nums1[k--] = nums2[j--];
     }
 }
