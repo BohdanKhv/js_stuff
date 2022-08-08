@@ -10,6 +10,31 @@ const merge2 = function(nums1, m, nums2, n) {
     }
 };
 
+// Other solution
+var merge = function(nums1, m, nums2, n) {
+    let counter1 = 0;
+    let counter2 = 0;
+    let tem = nums1.slice(0, m);
+
+    for (let i = 0; i < m + n; i++) {
+        if (counter1 < m && counter2 < n) {
+            if (tem[counter1] < nums2[counter2]) {
+                nums1[i] = tem[counter1];
+                counter1++;
+            } else {
+                nums1[i] = nums2[counter2];
+                counter2++;
+            }
+        } else if (counter1 < m) {
+            nums1[i] = tem[counter1];
+            counter1++;
+        } else {
+            nums1[i] = nums2[counter2];
+            counter2++;
+        }
+    }
+}
+
 // Faster Solution
 const merge = (nums1, m, nums2, n) => {
     // Length of nums1
