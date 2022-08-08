@@ -18,3 +18,8 @@ var countOdds = function(low, high) {
     }
     return parseInt((high - low) / 2) + 1
 };
+
+// One loop Solution
+var countOdds = function(low, high) {
+    return low % 2 === 0 && high % 2 === 0 ? (high - low) / 2 : Math.floor((high - low) / 2) + 1;
+};
