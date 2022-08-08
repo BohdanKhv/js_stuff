@@ -5,7 +5,9 @@ var middleNode = function(head) {
     let slow = head;
     let fast = head;
     while (fast && fast.next) {
+        // slow moves one step each time
         slow = slow.next;
+        // fast moves two steps each time
         fast = fast.next.next;
     }
     return slow;
