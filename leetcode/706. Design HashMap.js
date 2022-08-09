@@ -2,7 +2,7 @@
 // Title: Design HashMap
 // Difficulty: Easy
 var MyHashMap = function() {
-    this.map = new Array(1000);
+    this.map = {};
 };
 
 MyHashMap.prototype.put = function(key, value) {
