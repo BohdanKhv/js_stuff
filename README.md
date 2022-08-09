@@ -1,5 +1,5 @@
-#LeetCode Solutions
-#JavaScript
+# LeetCode Solutions
+# JavaScript
 
 A Record of My Problem Solving Journey.
 
