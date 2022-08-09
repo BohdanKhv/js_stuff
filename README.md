@@ -1,5 +1,6 @@
 # LeetCode Solutions
-# JavaScript
+
+## Language: JavaScript
 
 A Record of My Problem Solving Journey.
 
