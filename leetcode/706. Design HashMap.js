@@ -1,0 +1,18 @@
+// Problem #: 706
+// Title: Design HashMap
+// Difficulty: Easy
+var MyHashMap = function() {
+    this.map = new Array(1000);
+};
+
+MyHashMap.prototype.put = function(key, value) {
+    this.map[key] = value;
+};
+
+MyHashMap.prototype.get = function(key) {
+    return this.map[key] === undefined ? -1 : this.map[key];
+};
+
+MyHashMap.prototype.remove = function(key) {
+    this.map[key] = -1;
+};
