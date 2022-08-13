@@ -18,3 +18,24 @@ var searchBST = function(root, val) {
     
     return null
 };
+
+
+// Other solutions
+var searchBST = function(root, val) {
+    if(!root) return null
+    
+    let result = null;
+    
+    // => Left | => Middle | => Right
+    const traverse = (node) => {
+        if(node.left) traverse(node.left);
+
+        if(node.val === val) result = node;
+        
+        if(node.right) traverse(node.right);
+    }
+    
+    traverse(root);
+    
+    return result;
+};
