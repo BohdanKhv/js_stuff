@@ -26,6 +26,30 @@ var hasPathSum = function(root, targetSum) {
     return hasPath;
 };
 
+// Same but shorter
+var hasPathSum = function(root, targetSum) {
+    if(!root) return false;
+    
+    let hasPath = false;
+    
+    const dfs = (node, sum) => {
+        if(hasPath) return;
+        if(!node.left && !node.right) {
+            if(sum === node.val) hasPath = true;
+            return;
+        }
+        
+        sum = sum - node.val;
+        
+        if(node.left) dfs(node.left, sum);
+        if(node.right) dfs(node.right, sum);
+    }
+
+    dfs(root, targetSum);
+
+    return hasPath;
+};
+
 // Recursive solution (Faster)
 var hasPathSum = function(root, targetSum) {
     if(!root) return false;
