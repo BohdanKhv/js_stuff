@@ -1,6 +1,8 @@
 // Problem #: 102
 // Title: Binary Tree Level Order Traversal
 // Difficulty: Medium
+
+// O(n) time | O(n) space - where n is the number of nodes in the tree
 var levelOrder = function(root) {
     if(!root) return []
 
