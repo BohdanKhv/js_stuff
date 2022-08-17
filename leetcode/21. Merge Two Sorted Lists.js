@@ -2,20 +2,28 @@
 // Title: Merge Two Sorted Lists
 // Difficulty: Easy
 var mergeTwoLists = function(l1, l2) {
+    // Create a dummy node
     let newList = new ListNode(0);
+    // Create a pointer to the dummy node
     let current = newList;
 
     while(l1 && l2) {
         if(l1.val < l2.val) {
+            // Add l1 to new list
             current.next = l1;
+            // Move l1 to next
             l1 = l1.next;
         } else {
+            // Add l2 to new list
             current.next = l2;
+            // Move l2 to next
             l2 = l2.next;
         }
+        // Move current to next
         current = current.next;
     }
 
+    // Add the remaining nodes to the new list
     current.next = l1 ? l1 : l2;
     return newList.next;
 }
