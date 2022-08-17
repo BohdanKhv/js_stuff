@@ -6,10 +6,16 @@ var reverseList = function(head) {
     let next = null;
     
     while(head) {
+        // Save next, because we will lose it after reversing
         next = head.next;
+        // Reverse the link
         head.next = prev;
+        // Move prev and head forward
         prev = head;
+        // Move head to next
         head = next;
     }
+
+    // Return the new head
     return prev;
 }
