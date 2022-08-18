@@ -8,7 +8,7 @@ var combinationSum3 = function(k, n) {
     const nums = [];
     for(let i = 1; i < 10; i++) nums.push(i);
     
-    const bfs = (i, nums, k, n, slate) => {
+    const dfs = (i, nums, k, n, slate) => {
         // Backtracking case
         if(n < 0) return
         
@@ -22,12 +22,12 @@ var combinationSum3 = function(k, n) {
         //dfs recursive case
         for(let j = i; j < nums.length; j++) {
             slate.push(nums[j]);
-            bfs(j + 1, nums, k, n - nums[j], slate);
+            dfs(j + 1, nums, k, n - nums[j], slate);
             slate.pop();
         }
     }
     
-    bfs(0, nums, k, n, []);
+    dfs(0, nums, k, n, []);
     
     return result;
 };

@@ -8,9 +8,9 @@ var combinationSum2 = function(candidates, target) {
     // Sort the array
     candidates.sort();
 
-    // BFS helper
+    // dfs helper
     // We need target so we don't have to use reduce
-    const bfs = (i, candidates, target, slate) => {
+    const dfs = (i, candidates, target, slate) => {
         // Backtracking
         if(target < 0) return;
 
@@ -21,7 +21,7 @@ var combinationSum2 = function(candidates, target) {
             return
         }
 
-        // bfs recursive case
+        // dfs recursive case
         for(let j = i; j < candidates.length; j++) {
             // If the current candidate is the same as the previous one, skip it
             // This is to avoid duplicates
@@ -30,13 +30,13 @@ var combinationSum2 = function(candidates, target) {
             slate.push(candidates[j]);
 
             // Recurse with the new slate and target
-            bfs(j + 1, candidates, target - candidates[j], slate);
+            dfs(j + 1, candidates, target - candidates[j], slate);
             // Clean slate
             slate.pop();
         }
     }
 
-    bfs(0, candidates, target, []);
+    dfs(0, candidates, target, []);
 
     return result;
 };
