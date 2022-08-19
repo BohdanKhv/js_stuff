@@ -18,6 +18,7 @@ var detectCapitalUse = function(word) {
 // Faster solution
 var detectCapitalUse = function(word) {
     let bool = false;
+
     if(word.toUpperCase() === word) bool = true;
     if(word.toLowerCase() === word) bool = true;
     if(word[0].toUpperCase() === word[0] && (word.slice(1).toUpperCase() === word.slice(1) || word.slice(1).toLowerCase() === word.slice(1))) bool = true;
